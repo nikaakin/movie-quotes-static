@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> "localization"], function () {
     Route::get('/', function () {
-        return view('welcome');
+        return view('quotes.landing');
+    });
+
+    Route::get('/movies/{title}', function ($title) {
+        return view("quotes.list");
     });
 
     Route::get('/{locale}', [LanguageController::class, 'switchLang']);
