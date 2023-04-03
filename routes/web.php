@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\QuoteController;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware'=> "localization"], function () {
-    Route::get('/', function () {
-        return view('quotes.landing');
-    });
+    Route::get('/', [QuoteController::class, "index"]);
 
-    Route::get('/movies/{title}', function ($title) {
-        return view("quotes.list");
-    });
+    Route::get('/movies/{movie:slug}', [MovieController::class, 'show']);
 
     Route::get('/{locale}', [LanguageController::class, 'switchLang']);
 });
