@@ -13,6 +13,9 @@ module.exports = {
                 tertiary: "#3D3B3B",
             },
             margin: {},
+            width: {
+                175: "43.75rem",
+            },
         },
     },
     plugins: [],
