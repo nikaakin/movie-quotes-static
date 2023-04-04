@@ -3,7 +3,7 @@
 @php
     $classes = "text-white border border-white bg-primary";
     
-    if(request()->session()->has('applocale') && $lang === request()->session()->get('applocale')){
+    if($lang === app()->getLocale()){
         $classes = "text-black border border-white bg-white";
     }
 @endphp
