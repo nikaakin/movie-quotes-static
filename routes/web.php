@@ -28,7 +28,11 @@ Route::group(['middleware' => "localization"], function () {
     Route::view('/login', "auth.login")->name('auth.login')->middleware('guest');
     Route::post('/login', [AuthController::class, "login"])->name('auth.login')->middleware('guest');
 
-    Route::view('/register', "auth.register")->name('auth.login')->middleware('guest');
+    Route::view('/register', "auth.register")->name('auth.register')->middleware('guest');
+
+    Route::get('/logout', [AuthController::class, "logout"])->name('auth.logout')->middleware('auth');
+
+    Route::get('/dashboard', [AuthController::class, "dashboard"])->name('auth.dashboard')->middleware('auth');
 
     Route::get('/{locale}', [LanguageController::class, 'switchLang'])->name('switchLang');
 });

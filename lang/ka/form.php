@@ -12,4 +12,12 @@ return [
     "login.password" => 'პაროლი: ',
     "login.placeholder" => 'ჩაწერეთ...',
     "login.submit" => 'შესვლა',
+    "list.button" => 'დაამატეთ ციტატა',
+    "layout.home" => "მთავარი",
+    "layout.dashboard" => "სამართავი პანელი",
+    "layout.login" => "შესვლა",
+    "layout.logout" => "გამოსვლა",
+    "layout.register" => "რეგისტრაცია",
+    "dashboard.title" => "სამართავი პანელი",
+    "dashboard.button" => "დაამატეთ ფილმი",
 ];

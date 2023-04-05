@@ -12,4 +12,12 @@ return [
     "login.password" => 'Password: ',
     "login.placeholder" => 'Enter...',
     "login.submit" => 'Login ',
+    "list.button" => 'Add a quote',
+    "layout.home" => "Home",
+    "layout.dashboard" => "Dashboard",
+    "layout.login" => "Login",
+    "layout.logout" => "Logout",
+    "layout.register" => "Register",
+    "dashboard.title" => "Dashboard",
+    "dashboard.button" => "Add a Movie",
 ];
