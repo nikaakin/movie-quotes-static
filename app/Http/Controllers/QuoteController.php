@@ -32,7 +32,6 @@ class QuoteController extends Controller
         ];
 
         if (array_key_exists('photo', $data)) {
-            // dd($data['photo']);
             $quoteData['photo'] = $data['photo']->store('photos');
         }
         Quote::create($quoteData);
