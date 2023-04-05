@@ -15,7 +15,7 @@ return new class() extends Migration
             $table->id();
             $table->json('quote');
             $table->foreignId("movie_id")->constrained();
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

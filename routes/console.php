@@ -18,21 +18,3 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
-
-Artisan::command('make:admin', function () {
-    $name = $this->ask('What is your name?');
-    $email = $this->ask('What is your email?');
-    $password = $this->secret('What is your password?');
-
-    if ($name && $email && $password) {
-        User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => bcrypt($password),
-            'isAdmin' => true,
-        ]);
-        return $this->info('Admin user created successfully!');
-    }
-
-    return $this->error('Admin user not created!');
-})->purpose('Create a new admin user');

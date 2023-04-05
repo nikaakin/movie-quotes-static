@@ -11,11 +11,10 @@ use Illuminate\View\View;
 
 class QuoteController extends Controller
 {
-    //
-
     public function index(): View
     {
-        return view('quotes.landing', ['quote' => Quote::with('movie')->get()->random()]);
+        $random = Quote::with('movie')->get()->random();
+        return view('quotes.landing', ['quote' => $random]);
     }
 
     public function create(Movie $movie): View
@@ -27,12 +26,16 @@ class QuoteController extends Controller
     {
         $data =  $request->validated();
 
-
-        Quote::create([
+        $quoteData = [
             'movie_id' => $data['movie_id'],
             'quote' => $data['quote'],
-            'photo' => $data['photo']->store('photos'),
-        ]);
+        ];
+
+        if (array_key_exists('photo', $data)) {
+            // dd($data['photo']);
+            $quoteData['photo'] = $data['photo']->store('photos');
+        }
+        Quote::create($quoteData);
 
         return redirect()->route('movies.show', ['movie' => $data['movie_slug']]);
     }

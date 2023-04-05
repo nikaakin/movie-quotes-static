@@ -9,7 +9,7 @@ class Movie extends Model
 {
     use HasFactory;
 
-    public $guarded =[];
+    public $guarded = [];
 
     public function quotes()
     {

@@ -10,6 +10,6 @@
 
 <a 
 {{ $attributes(['class'=> "w-14 h-14  rounded-full 
-flex justify-center items-center text-2xl ". $classes,]) }}
+flex justify-center items-center text-2xl ". $classes]) }}
 >
 {{ $lang }}</a>

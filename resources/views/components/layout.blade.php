@@ -12,9 +12,9 @@
         @vite('resources/css/app.css')
     </head>
     <body class=" bg-primary">
-        <nav class="absolute flex flex-col h-full justify-center ml-14 gap-4 top-0 left-0">
+        <nav class="fixed flex flex-col h-full justify-center ml-14 gap-4 top-0 left-0">
             @foreach (config('language') as $lang)
-                <x-button :lang="$lang" href="/{{ $lang }}"/>
+                <x-button :lang="$lang" href="{{ route('switchLang', $lang) }}"/>
             @endforeach
         </nav>
         {{ $slot }}
