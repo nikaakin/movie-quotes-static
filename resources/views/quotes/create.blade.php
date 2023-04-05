@@ -14,8 +14,8 @@
                 name="quote[en]" 
                 id="quote[en]" 
                 rows="3" 
-                class=" w-full bg-white text-slate-700" 
-                placeholder="add quote in english here..."
+                class=" w-full bg-white text-slate-700 p-2" 
+                placeholder="{{ __("form.quote.placeholder") }}"
                 >{{ old('quote[en]') }}</textarea>
                 @error('quote[en]')
                     <div class="text-red-500 text-sm">{{ $message }}</div>              
@@ -28,8 +28,8 @@
                 name="quote[ka]" 
                 id="quote[ka]" 
                 rows="3" 
-                class=" w-full bg-white text-slate-700" 
-                placeholder="add quote in english here..."
+                class=" w-full bg-white text-slate-700 p-2" 
+                placeholder="{{ __('form.quote.placeholder') }}"
                 >{{ old('quote[ka]') }}</textarea>
                 @error('quote[ka]')
                 <div class="text-red-500 text-sm">{{ $message }}</div>              

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
@@ -23,6 +24,11 @@ Route::group(['middleware' => "localization"], function () {
     Route::post('/quotes/store', [QuoteController::class, "store"])->name('quotes.store');
 
     Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
+
+    Route::view('/login', "auth.login")->name('auth.login')->middleware('guest');
+    Route::post('/login', [AuthController::class, "login"])->name('auth.login')->middleware('guest');
+
+    Route::view('/register', "auth.register")->name('auth.login')->middleware('guest');
 
     Route::get('/{locale}', [LanguageController::class, 'switchLang'])->name('switchLang');
 });

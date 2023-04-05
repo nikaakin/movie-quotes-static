@@ -1,9 +1,7 @@
     <x-layout>
         <div class="flex items-center h-full min-h-screen flex-col text-white">
-            <a 
-            href="{{ route('quotes.create', $movie->slug) }}"" 
-            class="absolute right-5 top-5 bg-slate-700 px-5 py-2 hover:bg-slate-500 rounded">
-            Add a quote</a>
+            <x-button href="{{ route('quotes.create', $movie->slug) }}" class="right-5 top-5 absolute">Add a quote</x-button>
+
             <h1 class="my-20 text-5xl">{{ $movie->title }}</h1>
             
             
