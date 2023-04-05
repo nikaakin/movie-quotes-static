@@ -9,7 +9,7 @@
             
             @foreach ($movie->quotes as $quote)
                 <div class="flex flex-col items-center w-175 border-black rounded-b-[10px] overflow-hidden mb-16 ">
-                    <img src="/images/image.png" alt="alt" class=" w-full h-auto ">
+                    <img src="/storage/{{ $quote->photo }}" alt="alt" class=" w-full h-auto ">
                     <p class="text-4xl pb-10 pt-8 bg-white text-primary w-full break-normal">
                        {{-- works without getTranslatiion('quote', app()->getLocale()) --}}
                         {{ $quote->quote }}

@@ -20,7 +20,7 @@ class QuoteFactory extends Factory
         return [
             'movie_id' => Movie::factory(),
             "quote" => ["en" => fake()->sentence(), 'ka' => fake()->sentence()],
-            "photo" => "/images/image.png"
+            "photo" => "/photos/image.png"
         ];
     }
 }
