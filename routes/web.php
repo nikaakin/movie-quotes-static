@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => "localization"], function () {
     Route::get('/', [QuoteController::class, "index"])->name('home');
+    Route::get('/movies/{movie:slug}/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');
+    Route::post('/quotes/store', [QuoteController::class, "store"])->name('quotes.store');
 
     Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
 
