@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware'=> "localization"], function () {
-    Route::get('/', [QuoteController::class, "index"]);
+Route::group(['middleware' => "localization"], function () {
+    Route::get('/', [QuoteController::class, "index"])->name('home');
 
-    Route::get('/movies/{movie:slug}', [MovieController::class, 'show']);
+    Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
 
-    Route::get('/{locale}', [LanguageController::class, 'switchLang']);
+    Route::get('/{locale}', [LanguageController::class, 'switchLang'])->name('switchLang');
 });
