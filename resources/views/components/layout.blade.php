@@ -17,7 +17,7 @@
         <x-button class=" z-10 " href="{{ route('home') }}">{{ __('form.layout.home') }}</x-button>
 
         @auth
-            <x-button class=" z-10 " href="{{ route('auth.dashboard') }}">{{ __('form.layout.dashboard') }}</x-button>
+            <x-button class=" z-10 " href="{{ route('dashboard') }}">{{ __('form.layout.dashboard') }}</x-button>
             <x-button class=" z-10 " href="{{ route('auth.logout') }}">{{ __('form.layout.logout') }}</x-button>
         @endauth
         

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\auth\LoginRequest;
+use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class AuthController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        return redirect()->route('auth.dashboard');
+        return redirect()->route('dashboard');
     }
 
     public function logout(): RedirectResponse
@@ -30,6 +31,18 @@ class AuthController extends Controller
     public function dashboard(): View
     {
         $quotes = Quote::with("movie")->latest()->simplePaginate(10);
-        return view('auth.dashboard', ['quotes' => $quotes]);
+        return view('dashboard.index', ['quotes' => $quotes]);
+    }
+
+    public function movies(): View
+    {
+        $movies = Movie::latest()->simplePaginate(10);
+        return view('dashboard.movies', ['movies' => $movies]);
+    }
+
+    public function quotes(): View
+    {
+        $quotes = Quote::latest()->simplePaginate(10);
+        return view('dashboard.quotes', ['quotes' => $quotes]);
     }
 }

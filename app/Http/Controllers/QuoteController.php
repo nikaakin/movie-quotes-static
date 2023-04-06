@@ -37,7 +37,7 @@ class QuoteController extends Controller
         }
         Quote::create($quoteData);
 
-        return redirect()->route('movies.show', ['movie' => $data['movie_slug']]);
+        return redirect()->route('dashboard.quotes', ['quotes' => Quote::latest()->simplePaginate(10)]);
     }
 
     public function edit(Quote $quote): View
@@ -47,16 +47,15 @@ class QuoteController extends Controller
 
     public function update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
     {
-        $data = $request->validated();
-        $quote->update($data);
+        $quote->update($request->validated());
 
-        return redirect()->route('auth.dashboard');
+        return redirect()->route('dashboard.quotes');
     }
 
     public function destroy(Quote $quote): RedirectResponse
     {
         $quote->delete();
 
-        return redirect()->route('auth.dashboard');
+        return redirect()->route('dashboard.quotes');
     }
 }

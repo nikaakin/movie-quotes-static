@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="text-white mt-10 text-center w-175  mx-auto">
+    <div class="text-white mt-32 text-center w-175  mx-auto">
         <h1 class=" text-2xl mb-8">
-           {{ __('form.quote.title') }}
+           {{ __('form.quote.title-update') }}
              <a href="{{ route('movies.show', $quote->movie->slug) }}"  class="uppercase underline"> {{ $quote->movie->title }}</a>
             </h1>
         <form action="/quotes/update/{{ $quote->id }}" method="POST" enctype="multipart/form-data">
