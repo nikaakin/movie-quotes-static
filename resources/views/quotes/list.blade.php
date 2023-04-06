@@ -1,8 +1,10 @@
     <x-layout>
         <div class="flex items-center h-full min-h-screen flex-col text-white">
-            <x-button 
-            href="{{ route('quotes.create', $movie->slug) }}" 
-            class="right-5 top-5 absolute">{{ __('form.list.button') }}</x-button>
+            @auth
+                <x-button 
+                href="{{ route('quotes.create', $movie->slug) }}" 
+                class="right-5 top-5 absolute">{{ __('form.list.button') }}</x-button>
+            @endauth
 
             <h1 class="my-20 text-5xl">{{ $movie->title }}</h1>
             
