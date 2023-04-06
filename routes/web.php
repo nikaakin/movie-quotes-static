@@ -23,6 +23,10 @@ Route::group(['middleware' => "localization"], function () {
     Route::get('/movies/{movie:slug}/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');
     Route::post('/quotes/store', [QuoteController::class, "store"])->name('quotes.store');
 
+    Route::get('/quotes/edit/{quote}', [QuoteController::class, "edit"])->name('quotes.edit');
+    Route::patch('/quotes/update/{quote}', [QuoteController::class, "update"])->name('quotes.update');
+    Route::delete('/quotes/delete/{quote}', [QuoteController::class, "destroy"])->name('quotes.destroy');
+
     Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
 
     Route::view('/login', "auth.login")->name('auth.login')->middleware('guest');
@@ -33,6 +37,7 @@ Route::group(['middleware' => "localization"], function () {
     Route::get('/logout', [AuthController::class, "logout"])->name('auth.logout')->middleware('auth');
 
     Route::get('/dashboard', [AuthController::class, "dashboard"])->name('auth.dashboard')->middleware('auth');
+
 
     Route::get('/{locale}', [LanguageController::class, 'switchLang'])->name('switchLang');
 });

@@ -6,6 +6,7 @@ return [
     "quote.ka" => 'ციტატა ქართულად: ',
     "quote.photo" => 'დაამატეთ ფოტო (*არასავალდებულო): ',
     "quote.submit" => 'დაამატეთ ციტატა',
+    "quote.edit" => 'ციტატის რედაქტირება',
     "quote.placeholder" => 'ჩაწერეთ თქვენი ციტატა...',
     "login.title" => "შესვლა",
     "login.email" => 'ელ.ფოსტა: ',
@@ -20,4 +21,12 @@ return [
     "layout.register" => "რეგისტრაცია",
     "dashboard.title" => "სამართავი პანელი",
     "dashboard.button" => "დაამატეთ ფილმი",
+    "dashboard.movies" => "ფილმები",
+    "dashboard.quotes" => "ციტატები",
+    "dashboard.actions" => "მოქმედებები",
+    "dashboard.edit" => "რედაქტირება",
+    "dashboard.delete" => "წაშლა",
+    "dashboard.create" => "დაამატეთ ციტატა",
+    "pagination.next" => "შემდეგი",
+    "pagination.previous" => "წინა"
 ];

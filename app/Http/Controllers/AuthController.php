@@ -6,6 +6,7 @@ use App\Http\Requests\auth\LoginRequest;
 use App\Models\Quote;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class AuthController extends Controller
 {
@@ -26,9 +27,9 @@ class AuthController extends Controller
         return redirect()->route('home');
     }
 
-    public function dashboard()
+    public function dashboard(): View
     {
-        $quotes = Quote::with("movie")->paginate(10);
+        $quotes = Quote::with("movie")->simplePaginate(10);
         return view('auth.dashboard', ['quotes' => $quotes]);
     }
 }

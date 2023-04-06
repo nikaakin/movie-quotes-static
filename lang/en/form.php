@@ -6,6 +6,7 @@ return [
     "quote.ka" => 'Quote in Georgian: ',
     "quote.photo" => 'Add photo (*optional): ',
     "quote.submit" => 'Submit Quote',
+    "quote.edit" => 'Edit Quote',
     "quote.placeholder" => 'Enter your quote here...',
     "login.title" => "Login",
     "login.email" => 'Email: ',
@@ -20,4 +21,12 @@ return [
     "layout.register" => "Register",
     "dashboard.title" => "Dashboard",
     "dashboard.button" => "Add a Movie",
+    "dashboard.movies" => "Movies",
+    "dashboard.quotes" => "Quotes",
+    "dashboard.actions" => "Actions",
+    "dashboard.edit" => "Edit",
+    "dashboard.delete" => "Delete",
+    "dashboard.create" => "Add a Quote",
+    'pagination.next' => "Next",
+    'pagination.previous' => "previous"
 ];
