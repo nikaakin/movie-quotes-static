@@ -28,6 +28,7 @@ Route::group(['middleware' => "localization"], function () {
     Route::delete('/quotes/delete/{quote}', [QuoteController::class, "destroy"])->name('quotes.destroy');
 
     Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
+    Route::view('/movies/create', 'movies.create')->name('movies.create');
 
     Route::view('/login', "auth.login")->name('auth.login')->middleware('guest');
     Route::post('/login', [AuthController::class, "login"])->name('auth.login')->middleware('guest');
