@@ -15,7 +15,7 @@
             class=" w-full bg-white text-slate-700 p-2" 
             placeholder="{{ __('form.login.placeholder') }} "
             />
-            @error('email')
+            @error('email') 
                 <div class="text-red-500 text-sm">{{ $message }}</div>              
             @enderror
         </div>

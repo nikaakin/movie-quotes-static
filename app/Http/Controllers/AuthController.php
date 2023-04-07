@@ -16,7 +16,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
 
         if (!auth()->attempt($credentials)) {
-            return back()->with('status', 'Invalid login details');
+            return back()->with('status', __('auth.failed'));
         }
 
         return redirect()->route('dashboard');
