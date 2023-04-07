@@ -14,7 +14,9 @@
         @foreach ($quotes as $quote)
             <div class="flex flex-col justify-center items-center w-[70vw] mx-auto text-black text-center">
                 <div class="w-full my-3 mx-5 flex  bg-slate-50 rounded px-5 py-3 hover:bg-slate-200 items-center">
-                <p class="text-base font-semibold border-r-2 border-black  mr-5 pr-5 basis-48">{{ $quote->movie->title }}</p>
+                <p class="text-base font-semibold border-r-2 border-black  mr-5 pr-5 basis-48">
+                    <a href="{{ route('movies.show', $quote->movie->slug ) }}" class="underline">{{ $quote->movie->title }}</a>    
+                </p>
                 <p class="text-base font-semibold flex-1 border-r-2 border-black mr-5 pr-5">{{ $quote->quote }}</p>
                 <div class="self-end  text-base flex flex-row">
                    <x-button class="mr-1" href="{{ route('quotes.create', $quote->movie->slug ) }}">{{ __('form.dashboard.create-quote') }}</x-button>
