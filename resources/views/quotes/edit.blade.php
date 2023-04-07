@@ -4,7 +4,7 @@
            {{ __('form.quote.title-update') }}
              <a href="{{ route('movies.show', $quote->movie->slug) }}"  class="uppercase underline"> {{ $quote->movie->title }}</a>
             </h1>
-        <form action="/quotes/update/{{ $quote->id }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('quotes.update', $quote->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
 
