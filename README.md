@@ -17,6 +17,7 @@ Random movie quote application gives users random movie quotes with respectve sc
 -   [Development](#development)
 -   [Project Structure](#project-structure)
 -   [Database Structure](#database-structure)
+-   [Recources](#recources)
 
 #
 
@@ -172,3 +173,9 @@ For more information about project standards, take a look at these docs:
 ### Database Structure
 
 Database structure - https://drawsql.app/teams/personal-865/diagrams/movie-qoutes/embed
+
+### Recources
+
+-   [Figma - project design.](https://www.figma.com/file/IIJOKK5esgM8uK8pM3D59J/Movie-Quotes?node-id=0%3A1)
+-   [Assignmant details](https://redberry.gitbook.io/assignment-i-movie-quotes/)
+-   [Git commit rules](https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi)
