@@ -39,7 +39,6 @@ class CreateAdmin extends Command
             ]);
             $this->info('Admin user created successfully!');
         } else {
-
             $this->error('Admin user not created!');
         }
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreQuoteRequest;
+use App\Http\Requests\UpdateQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\RedirectResponse;
@@ -36,6 +37,25 @@ class QuoteController extends Controller
         }
         Quote::create($quoteData);
 
-        return redirect()->route('movies.show', ['movie' => $data['movie_slug']]);
+        return redirect()->route('dashboard.quotes', ['quotes' => Quote::latest()->simplePaginate(10)]);
+    }
+
+    public function edit(Quote $quote): View
+    {
+        return view('quotes.edit', ['quote' => $quote]);
+    }
+
+    public function update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
+    {
+        $quote->update($request->validated());
+
+        return redirect()->route('dashboard.quotes');
+    }
+
+    public function destroy(Quote $quote): RedirectResponse
+    {
+        $quote->delete();
+
+        return redirect()->route('dashboard.quotes');
     }
 }
