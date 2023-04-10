@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\quote;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -18,7 +18,7 @@ class StoreQuoteRequest extends FormRequest
         return [
             "movie_id" => ['required', Rule::exists('movies', 'id')],
             "movie_slug" => ['required'],
-            "photo" => ['image'],
+            "photo" => ['image', 'required'],
             'quote.ka' => ['required'],
             'quote.en' => ['required'],
         ];

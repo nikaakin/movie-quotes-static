@@ -31,7 +31,7 @@
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __('form.quote.placeholder') }}"
                 >{{ old('quote[ka]') }}</textarea>
-                @dd($errors->quote->all())
+                {{-- @dd($errors->quote->all()) --}}
                 @error('quote[ka]')
                     <div class="text-red-500 text-sm">{{ $message }}</div>              
                 @enderror
