@@ -30,7 +30,7 @@ class AuthController extends Controller
 
     public function dashboard(): View
     {
-        $quotes = Quote::with("movie")->latest()->simplePaginate(10);
+        $quotes = Quote::with('movie')->latest()->simplePaginate(10);
         return view('dashboard.index', ['quotes' => $quotes]);
     }
 

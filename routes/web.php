@@ -45,7 +45,7 @@ Route::group(['middleware' => "localization"], function () {
             Route::post('/store', 'store')->name('movies.store');
             Route::get('/edit/{movie}', 'edit')->name('movies.edit');
             Route::patch('/update/{movie}', 'update')->name('movies.update');
-            Route::delete('/destroy/{movie}',  'destroy')->name('movies.destroy');
+            Route::delete('/destroy/{movie}', 'destroy')->name('movies.destroy');
         });
 
         Route::get('/movies/{movie:slug}/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');

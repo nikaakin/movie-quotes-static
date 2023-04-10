@@ -14,11 +14,21 @@ class StoreQuoteRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd('ssss');
         return [
             "movie_id" => ['required', Rule::exists('movies', 'id')],
             "movie_slug" => ['required'],
             "photo" => ['image'],
-            'quote' => ['array', 'required'],
+            'quote.ka' => ['required'],
+            'quote.en' => ['required'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'quote.ka' => 'required newnenwnenwnenwn',
+            'quote.en' => 'required newnenwnenwnenwn',
         ];
     }
 
