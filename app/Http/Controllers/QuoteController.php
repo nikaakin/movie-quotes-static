@@ -31,10 +31,10 @@ class QuoteController extends Controller
             'movie_id' => $data['movie_id'],
             'quote' => $data['quote'],
         ];
+        $photoUrl = $data['photo']->store('photos');
 
-        if (array_key_exists('photo', $data)) {
-            $quoteData['photo'] = $data['photo']->store('photos');
-        }
+        $quoteData['photo'] = explode("/", $photoUrl)[1];
+
         Quote::create($quoteData);
 
         return redirect()->route('dashboard.quotes', ['quotes' => Quote::latest()->simplePaginate(10)]);
@@ -47,7 +47,14 @@ class QuoteController extends Controller
 
     public function update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
     {
-        $quote->update($request->validated());
+        $data = $request->validated();
+
+        if (array_key_exists('photo', $data)) {
+            $photoUrl = $data['photo']->store('photos');
+            $data['photo'] = explode('/', $photoUrl)[1];
+        }
+
+        $quote->update($data);
 
         return redirect()->route('dashboard.quotes');
     }
