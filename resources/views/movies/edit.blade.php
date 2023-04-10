@@ -7,7 +7,7 @@
             @csrf
             @method('PATCH')
             
-            <div class="flex flex-col items-center mb-10">
+            <div class="flex flex-col items-center mb-10 relative">
                 <label for="title" class=" self-start mb-4">{{ __('form.movie.title') }}</label>
                 <input 
                 name="title" 
@@ -18,11 +18,11 @@
                 value="{{ $movie->title }}"
                 />
                 @error('title')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>              
+                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
                 @enderror
             </div>
           
-            <div class="flex flex-col items-center mb-10">
+            <div class="flex flex-col items-center mb-10 relative">
                 <label for="slug" class=" self-start mb-4">{{ __('form.movie.slug') }} </label>
                 <input 
                 name="slug" 
@@ -33,7 +33,7 @@
                 value="{{ $movie->slug }}"
                 />
                 @error('slug')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>              
+                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
                 @enderror
             </div>
           
