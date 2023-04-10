@@ -25,7 +25,7 @@ Route::group(['middleware' => "localization"], function () {
 
     Route::group(['middleware' => "guest"], function () {
         Route::group(['prefix' => "login"], function () {
-            Route::view('/', 'auth.login')->name('auth.google');
+            Route::view('/', 'auth.login')->name('auth.showLogin');
             Route::post('/', [AuthController::class, "login"])->name('auth.login');
         });
         Route::view('/register', "auth.register")->name('auth.register');
@@ -45,7 +45,7 @@ Route::group(['middleware' => "localization"], function () {
             Route::post('/store', 'store')->name('movies.store');
             Route::get('/edit/{movie}', 'edit')->name('movies.edit');
             Route::patch('/update/{movie}', 'update')->name('movies.update');
-            Route::delete('/destroy/{movie}',  'destroy')->name('movies.destroy');
+            Route::delete('/destroy/{movie}', 'destroy')->name('movies.destroy');
         });
 
         Route::get('/movies/{movie:slug}/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');

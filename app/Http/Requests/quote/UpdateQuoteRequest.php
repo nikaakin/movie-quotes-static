@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\quote;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreQuoteRequest extends FormRequest
+class UpdateQuoteRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -15,10 +14,9 @@ class StoreQuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "movie_id" => ['required', Rule::exists('movies', 'id')],
-            "movie_slug" => ['required'],
-            "photo" => ['image'],
-            'quote' => ['array', 'required'],
+            'quote' => ['required', 'array'],
+            'photo' => 'image',
+            'movie_id' => 'required'
         ];
     }
 
