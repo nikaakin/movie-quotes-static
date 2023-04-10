@@ -35,7 +35,6 @@ Route::group(['middleware' => "localization"], function () {
         Route::get('/logout', [AuthController::class, "logout"])->name('auth.logout');
 
         Route::group(['prefix' => "dashboard", 'controller' => AuthController::class], function () {
-            Route::get('', "dashboard")->name('dashboard');
             Route::get('/quotes', "quotes")->name('dashboard.quotes');
             Route::get('/movies', "movies")->name('dashboard.movies');
         });

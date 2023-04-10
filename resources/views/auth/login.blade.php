@@ -6,7 +6,7 @@
         <form action="/login" method="post">
         @csrf
 
-        <div class="flex flex-col items-center mb-10">
+        <div class="flex flex-col items-center mb-10 relative">
             <label for="email" class=" self-start mb-4">{{ __('form.login.email') }}</label>
             <input 
             name="email" 
@@ -16,11 +16,11 @@
             placeholder="{{ __('form.login.placeholder') }} "
             />
             @error('email') 
-                <div class="text-red-500 text-sm">{{ $message }}</div>              
+                <div class="text-red-500 text-sm absolute -bottom-5">{{ $message }}</div>              
             @enderror
         </div>
      
-        <div class="flex flex-col items-center mb-10">
+        <div class="flex flex-col items-center mb-10 relative">
             <label for="password" class=" self-start mb-4">{{ __('form.login.password') }}</label>
             <input 
             name="password" 
@@ -30,7 +30,7 @@
             placeholder="{{ __('form.login.placeholder') }} "
             />
             @error('password')
-                <div class="text-red-500 text-sm">{{ $message }}</div>              
+                <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
             @enderror
         </div>
 

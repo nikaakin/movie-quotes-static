@@ -18,8 +18,7 @@ class AuthController extends Controller
         if (!auth()->attempt($credentials)) {
             return back()->with('status', __('auth.failed'));
         }
-
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard.quotes');
     }
 
     public function logout(): RedirectResponse
@@ -31,7 +30,7 @@ class AuthController extends Controller
     public function dashboard(): View
     {
         $quotes = Quote::with('movie')->latest()->simplePaginate(10);
-        return view('dashboard.index', ['quotes' => $quotes]);
+        return view('dashboard.quotes', ['quotes' => $quotes]);
     }
 
     public function movies(): View

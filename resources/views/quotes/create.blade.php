@@ -8,7 +8,7 @@
             @csrf
             <input type="hidden" name="movie_id" value="{{ $movie->id }}">
             <input type="hidden" name="movie_slug" value="{{ $movie->slug }}">
-            <div class="flex flex-col items-center mb-10">
+            <div class="flex flex-col items-center mb-10 relative">
                 <label for="quote[en]" class=" self-start mb-4">{{ __('form.quote.en') }}</label>
                 <textarea 
                 name="quote[en]" 
@@ -18,11 +18,11 @@
                 placeholder="{{ __("form.quote.placeholder") }}"
                 >{{ old('quote[en]') }}</textarea>
                 @error('quote[en]')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>              
+                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
                 @enderror
             </div>
           
-            <div class="flex flex-col items-center mb-10">
+            <div class="flex flex-col items-center mb-10 relative">
                 <label for="quote[ka]" class=" self-start mb-4">{{ __('form.quote.ka') }} </label>
                 <textarea 
                 name="quote[ka]" 
@@ -31,17 +31,17 @@
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __('form.quote.placeholder') }}"
                 >{{ old('quote[ka]') }}</textarea>
-                {{-- @dd($errors->quote->all()) --}}
+
                 @error('quote[ka]')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>              
+                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
                 @enderror
             </div>
           
-            <div class="flex flex-col items-center mb-10">
+            <div class="flex flex-col items-center mb-10 relative">
                 <label for="photo" class=" self-start mb-4">{{ __('form.quote.photo') }} </label>
                 <input id="photo" name="photo" type="file" class="bg-white text-slate-700">
                 @error('photo')
-                     <div class="text-red-500 text-sm">{{ $message }}</div>              
+                     <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
                  @enderror
             </div>
 
