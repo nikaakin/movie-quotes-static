@@ -14,8 +14,7 @@ class StoreQuoteRequest extends FormRequest
      */
     public function rules(): array
     {
-        //!!  WIP 
-        // dd('ssss');
+        // dd('w');
         return [
             "movie_id" => ['required', Rule::exists('movies', 'id')],
             "movie_slug" => ['required'],
@@ -25,11 +24,11 @@ class StoreQuoteRequest extends FormRequest
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
-            'quote.ka' => 'required newnenwnenwnenwn',
-            'quote.en' => 'required newnenwnenwnenwn',
+            'quote.ka' => __('form.quote.kaRequired'),
+            'quote.en' => __('form.quote.enRequired'),
         ];
     }
 

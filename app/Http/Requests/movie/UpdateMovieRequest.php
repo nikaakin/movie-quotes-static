@@ -14,8 +14,16 @@ class UpdateMovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "slug" => "required|unique:movies,slug," . $this->movie->id,
-            "title" => "required|unique:movies,title," . $this->movie->id,
+            'title' => "required|string|unique:movies,title.ka",
+            'title_geo' => "required|string|unique:movies,title.en",
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'title.required' => __('form.movie.titleRequired'),
+            'title_geo.required' => __('form.movie.titleGeoRequired')
         ];
     }
 }

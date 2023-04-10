@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="text-white mt-32 text-center w-175  mx-auto">
+    <div class="text-white pt-32 text-center w-175  mx-auto">
         <h1 class=" text-2xl mb-8">
            {{ __('form.movie.edit') }}
             </h1>
@@ -8,7 +8,7 @@
             @method('PATCH')
             
             <div class="flex flex-col items-center mb-10 relative">
-                <label for="title" class=" self-start mb-4">{{ __('form.movie.title') }}</label>
+                <label for="title" class=" self-start mb-4">{{ __('form.movie.title-ka') }}</label>
                 <input 
                 name="title" 
                 id="title" 
@@ -17,23 +17,23 @@
                 placeholder="{{ __("form.movie.placeholder") }}"
                 value="{{ $movie->title }}"
                 />
-                @error('title')
-                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
+                @error('title')            
+                    <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
                 @enderror
             </div>
           
             <div class="flex flex-col items-center mb-10 relative">
-                <label for="slug" class=" self-start mb-4">{{ __('form.movie.slug') }} </label>
+                <label for="title_geo" class=" self-start mb-4">{{ __('form.movie.title-en') }} </label>
                 <input 
-                name="slug" 
-                id="slug" 
+                name="title_geo" 
+                id="title_geo" 
                 rows="3" 
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __('form.movie.placeholder') }}"
-                value="{{ $movie->slug }}"
+                value="{{ $movie->title_geo }}"
                 />
-                @error('slug')
-                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
+                @error('title_geo')
+                    <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
                 @enderror
             </div>
           

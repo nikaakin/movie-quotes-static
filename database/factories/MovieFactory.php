@@ -18,6 +18,7 @@ class MovieFactory extends Factory
     {
         return [
             "title" => fake()->unique()->word(),
+            "title_geo" => fake()->unique()->word(),
             "slug" => fake()->unique()->slug(),
 
         ];

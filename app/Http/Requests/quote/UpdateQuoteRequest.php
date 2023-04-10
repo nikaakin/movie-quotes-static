@@ -16,7 +16,17 @@ class UpdateQuoteRequest extends FormRequest
         return [
             'quote' => ['required', 'array'],
             'photo' => 'image',
-            'movie_id' => 'required'
+            'movie_id' => 'required',
+            'quote.ka' => ['required'],
+            'quote.en' => ['required'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'quote.ka' => __('form.quote.kaRequired'),
+            'quote.en' => __('form.quote.enRequired'),
         ];
     }
 

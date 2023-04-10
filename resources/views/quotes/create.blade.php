@@ -17,8 +17,8 @@
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __("form.quote.placeholder") }}"
                 >{{ old('quote[en]') }}</textarea>
-                @error('quote[en]')
-                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
+                @error('quote.en')
+                    <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
                 @enderror
             </div>
           
@@ -31,9 +31,8 @@
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __('form.quote.placeholder') }}"
                 >{{ old('quote[ka]') }}</textarea>
-
-                @error('quote[ka]')
-                    <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
+                @error('quote.ka')
+                    <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
                 @enderror
             </div>
           
@@ -41,7 +40,7 @@
                 <label for="photo" class=" self-start mb-4">{{ __('form.quote.photo') }} </label>
                 <input id="photo" name="photo" type="file" class="bg-white text-slate-700">
                 @error('photo')
-                     <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
+                     <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
                  @enderror
             </div>
 
