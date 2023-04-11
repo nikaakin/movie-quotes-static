@@ -19,7 +19,6 @@ class MovieController extends Controller
     public function store(StoreMovieRequest $request): RedirectResponse
     {
         Movie::create($request->validated());
-
         return redirect()->route('dashboard.movies');
     }
 
@@ -31,14 +30,12 @@ class MovieController extends Controller
     public function update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
     {
         $movie->update($request->validated());
-
         return redirect()->route('dashboard.movies');
     }
 
     public function destroy(Movie $movie): RedirectResponse
     {
         $movie->delete();
-
         return redirect()->route('dashboard.movies');
     }
 }

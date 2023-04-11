@@ -30,7 +30,7 @@
             placeholder="{{ __('form.login.placeholder') }} "
             />
             @error('password')
-                <div class="text-red-500 text-sm -bottom-5">{{ $message }}</div>              
+                <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
             @enderror
         </div>
 
