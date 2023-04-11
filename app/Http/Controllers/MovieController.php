@@ -18,7 +18,14 @@ class MovieController extends Controller
 
     public function store(StoreMovieRequest $request): RedirectResponse
     {
-        Movie::create($request->validated());
+        $validated = $request->validated();
+        $data = [
+            'slug' => $validated['slug'],
+            'title' => $validated['title']['en'],
+            'title_geo' => $validated['title']['ka']
+        ];
+
+        Movie::create($data);
 
         return redirect()->route('dashboard.movies');
     }
@@ -30,7 +37,12 @@ class MovieController extends Controller
 
     public function update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
     {
-        $movie->update($request->validated());
+        $validated = $request->validated();
+        $data = [
+            'title' => $validated['title']['en'],
+            'title_geo' => $validated['title']['ka']
+        ];
+        $movie->update($data);
 
         return redirect()->route('dashboard.movies');
     }

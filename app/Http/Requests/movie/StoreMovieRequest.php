@@ -16,24 +16,24 @@ class StoreMovieRequest extends FormRequest
     public function prepareForValidation()
     {
         $this->merge([
-            'slug' => Str::slug($this->title)
+            'slug' => Str::slug($this->title['en'])
         ]);
     }
 
     public function rules(): array
     {
         return [
-            'title' => "required|string|unique:movies,title",
-            'title_geo' => "required|string|unique:movies,title_geo",
-            'slug' => "required"
+            'title.en' => "required",
+            'title.ka' => "required",
+            'slug' => "required|unique:movies,slug"
         ];
     }
 
     public function messages(): array
     {
         return [
-            "title.required" => __('form.movie.titleRequired'),
-            "title_geo.required" => __('form.movie.titleGeoRequired'),
+            "title.en" => __('form.movie.titleRequired'),
+            "title.ka" => __('form.movie.titleGeoRequired'),
         ];
     }
 }

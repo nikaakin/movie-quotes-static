@@ -14,16 +14,16 @@ class UpdateMovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => "required|string|unique:movies,title.ka",
-            'title_geo' => "required|string|unique:movies,title.en",
+            'title.en' => "required|unique:movies,title," . $this->movie->id,
+            'title.ka' => "required|unique:movies,title_geo," . $this->movie->id,
         ];
     }
 
     public function messages(): array
     {
         return [
-            'title.required' => __('form.movie.titleRequired'),
-            'title_geo.required' => __('form.movie.titleGeoRequired')
+            'title.en' => __('form.movie.titleRequired'),
+            'title.ka' => __('form.movie.titleGeoRequired')
         ];
     }
 }
