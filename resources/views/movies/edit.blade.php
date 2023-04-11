@@ -15,7 +15,7 @@
                 rows="3" 
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __("form.movie.placeholder") }}"
-                value="{{ $movie->title }}"
+                value="{{ $movie->getTranslation('title', 'en') }}"
                 />
                 @error('title.en')            
                     <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              
@@ -30,7 +30,7 @@
                 rows="3" 
                 class=" w-full bg-white text-slate-700 p-2" 
                 placeholder="{{ __('form.movie.placeholder') }}"
-                value="{{ $movie->title_geo }}"
+                value="{{ $movie->getTranslation('title', 'ka') }}"
                 />
                 @error('title.ka')
                     <div class="text-red-500 text-sm -bottom-5 absolute">{{ $message }}</div>              

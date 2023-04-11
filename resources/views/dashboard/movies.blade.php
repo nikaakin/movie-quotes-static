@@ -17,7 +17,7 @@
                 <div class="w-full my-3 grid grid-cols-12  bg-slate-50 rounded px-5 py-3 hover:bg-slate-200 items-center">
                 <p 
                 class="text-base font-semibold border-r-2 border-black  mr-5 pr-5 col-span-2">
-                <a href="{{ route('movies.show',$movie->slug  ) }}" class="underline">{{ app()->getLocale() === "en" ? $movie->title : $movie->title_geo }}</a> 
+                <a href="{{ route('movies.show',$movie->slug  ) }}" class="underline">{{  $movie->title }}</a> 
                 </p>
                 <p class="text-base font-semibold border-r-2 border-black  mr-5 pr-5  col-span-5">{{ $movie->slug }}</p>
                 <div class="self-end  flex flex-row text-sm col-span-5 w-full justify-end">
