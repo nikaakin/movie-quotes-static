@@ -4,7 +4,7 @@
            {{ __('form.quote.title') }}
              <a href="{{ route('movies.show', $movie->slug) }}"  class="underline"> {{ $movie->title }}</a>
             </h1>
-        <form action="/quotes/store" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('quotes.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="movie_id" value="{{ $movie->id }}">
             <input type="hidden" name="movie_slug" value="{{ $movie->slug }}">
