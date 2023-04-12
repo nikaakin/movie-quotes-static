@@ -2,7 +2,7 @@
     <div class="text-white mt-32 text-center w-175  mx-auto">
         <h1 class=" text-2xl mb-8">
            {{ __('form.quote.title') }}
-             <a href="{{ route('movies.show', $movie->slug) }}"  class="uppercase underline"> {{ $movie->title }}</a>
+             <a href="{{ route('movies.show', $movie->slug) }}"  class="underline"> {{ $movie->title }}</a>
             </h1>
         <form action="/quotes/store" method="POST" enctype="multipart/form-data">
             @csrf
