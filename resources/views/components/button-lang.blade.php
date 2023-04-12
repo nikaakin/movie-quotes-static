@@ -1,7 +1,7 @@
 @props(['lang'])
 
 @php
-    $classes = "text-white border border-white bg-primary";
+    $classes = "text-white border border-white bg-radial-dark";
     
     if($lang === app()->getLocale()){
         $classes = "text-black border border-white bg-white";

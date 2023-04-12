@@ -3,7 +3,7 @@
     <div class="mt-20 w-175 mx-auto text-white">
         <h1 class="text-4xl mb-10">{{ __('form.login.title') }}</h1>
 
-        <form action="/login" method="post">
+        <form action="{{ route('auth.login') }}" method="post">
         @csrf
 
         <div class="flex flex-col items-center mb-10 relative">
